@@ -1,0 +1,26 @@
+Quello che ti chiedo è di svolgere quanto segue.
+
+
+Creare un’interfaccia di autenticazione utente, che consenta di effettuare le operazioni di registrazione, login e recupero password.
+
+- L’interfaccia comunicherà con il back-end tramite REST API. *
+
+- Dovrà essere previsto un database in grado di conservare i vari account registrati, di modo da consentire il login *
+
+- In fase di registrazione dovranno essere raccolti i seguenti campi: 
+
+  nome, cognome, email, password, codice fiscale, data di nascita, sesso e luogo di nascita *
+
+- Non potranno essere registrati più utenti con la stessa email e codice fiscale *
+
+- Ogni accesso (login) dovrà essere tracciato in una tabella di log sul database con tutte le informazioni
+
+- La procedura di recupero password dovrà essere gestita tramite l’invio di una email con le nuove credenziali
+
+//BONUS
+
+- possibilità di autenticazione tramite social (es. Facebook o Gmail)
+
+- in caso di registrazione manuale, validare la password affinchè abbia almeno 8 caratteri tra cui una lettera maiuscola ed una minuscola, un numero ed un simbolo
+
+- sistema di decodifica del codice fiscale per compilare automaticamente i dati derivati (data di nascita, sesso e città di nascita) da interfaccia
