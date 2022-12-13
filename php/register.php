@@ -1,7 +1,5 @@
 <?php
-
-require_once("config.php");
-
+require_once "config.php";
 $_POST = json_decode(file_get_contents('php://input'), true);
 
 $nome = $connection->real_escape_string($_POST['nome']);
@@ -15,6 +13,33 @@ $luogo_di_nascita = $connection->real_escape_string($_POST['luogo_di_nascita']);
 
 //password hashata
 $hash_password = password_hash($password, PASSWORD_DEFAULT);
+$error = '';
+
+if (empty($nome)) {
+    $error = "inserisci il nome";
+} 
+else if (empty($cognome)) {
+    $error = "inserisci il cognome";
+}
+else if (empty($email)) {
+    $error = "inserisci l' email";
+}
+else if (empty($password)) {
+    $error = "inserisci la password";
+}
+else if (empty($codice_Fiscale)) {
+    $error = "inserisci il codice fiscale";
+}
+else if (empty($sesso)) {
+    $error = "inserisci il sesso";
+}
+else if (empty($compleanno)) {
+    $error = "inserisci la tua data di nascita";
+}
+else if (empty($luogo_di_nascita)) {
+    $error = "inserisci il luogo di nascita";
+}
+
 
 
 

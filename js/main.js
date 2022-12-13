@@ -21,21 +21,15 @@ function addUser(event) {
     if (nomeVal == "" || cognomeVal == "" || emailVal == "" || passwordVal == "" || codice_FiscaleVal == "" || sessoVal == "" || data_nascitaVal == "" || luogo_nascitaVal == "") 
     {
         alert("inserisci tutti i campi per proseguire");
-        
-        
-    } else if(codice_FiscaleVal.length != 16) 
-    {
-        alert("inserisci il codice fiscale correttamente!")
-    } else if (passwordVal.length < 8) 
-    {
-        alert("la password deve contenere almeno 8 caratteri");
-    }
+                
+    } 
     
     else 
     {
         //chiamata axios se le validazioni sono fatte
         axios.post('php/register.php', 
         {
+            //passo i parametri
             nome: nomeVal,
             cognome: cognomeVal,
             email: emailVal,
@@ -47,16 +41,10 @@ function addUser(event) {
             
         }).then(res => {
             
-            alert("registrazione avvenuta con successo");
-            //faccio svuotare i campi degli input
-            nomeVal = "";
-            cognomeVal = "";
-            emailVal = "";
-            passwordVal = "";
-            codice_FiscaleVal = "";
-            sessoVal = "";
-            data_nascitaVal = "";
-            luogo_nascitaVal = "";
+            
+            window.location.href = "/esercitazione_brainin/login.html";
+            
+            
             
         }).catch(error => {
             console.log(error)
@@ -64,3 +52,4 @@ function addUser(event) {
         }
     
 }
+

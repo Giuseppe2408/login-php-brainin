@@ -7,13 +7,13 @@ Creare un’interfaccia di autenticazione utente, che consenta di effettuare le 
 
 - Dovrà essere previsto un database in grado di conservare i vari account registrati, di modo da consentire il login *
 
-- In fase di registrazione dovranno essere raccolti i seguenti campi: 
+- In fase di registrazione dovranno essere raccolti i seguenti campi:  *
 
   nome, cognome, email, password, codice fiscale, data di nascita, sesso e luogo di nascita *
 
 - Non potranno essere registrati più utenti con la stessa email e codice fiscale *
 
-- Ogni accesso (login) dovrà essere tracciato in una tabella di log sul database con tutte le informazioni
+- Ogni accesso (login) dovrà essere tracciato in una tabella di log sul database con tutte le informazioni *
 
 - La procedura di recupero password dovrà essere gestita tramite l’invio di una email con le nuove credenziali
 
