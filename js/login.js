@@ -60,7 +60,6 @@ button_mail.addEventListener('click', sendMail);
 function sendMail(event) {
 
     event.preventDefault();
-    console.log(document.getElementById('email').value)
 
     if (document.getElementById('email').value == '' || document.getElementById('email').value == null) {
         alert('inserisci la mail'); 
