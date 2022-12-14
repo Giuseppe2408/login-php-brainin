@@ -14,16 +14,13 @@ function addUser(event) {
 
 
 
-
     event.preventDefault();
     //da migliorare
     //validazioni
-    if (nomeVal == "" || cognomeVal == "" || emailVal == "" || passwordVal == "" || codice_FiscaleVal == "" || sessoVal == "" || data_nascitaVal == "" || luogo_nascitaVal == "") 
+    if (nomeVal == "" || cognomeVal == "" || emailVal == "" || passwordVal == "" || codice_FiscaleVal == "" || data_nascitaVal == "" || luogo_nascitaVal == "") 
     {
-        alert("inserisci tutti i campi per proseguire");
-                
+        alert("inserisci tutti i campi per proseguire");                
     } 
-    
     else 
     {
         //chiamata axios se le validazioni sono fatte
@@ -41,10 +38,7 @@ function addUser(event) {
             
         }).then(res => {
             
-            
             window.location.href = "/esercitazione_brainin/login.html";
-            
-            
             
         }).catch(error => {
             console.log(error)

@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 
 
 <!DOCTYPE html>
@@ -20,12 +22,24 @@
             <li class="nav-item active">
               <a class="nav-link" href="area_privata.php">Area Privata</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="register.html">Register</a>
-            </li>           
+            <?php 
+            //se l'utente non è loggato mostro il tasto login e logout
+            if(!isset($_SESSION['logged']) || $_SESSION['logged'] !== true) 
+            {?>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="register.html">Register</a>
+              </li>
+
+            <?php
+            } 
+            else { 
+              //altrimenti nulla
+                echo "";
+            } ?>
+                     
           </ul>
         </div>
     </nav>

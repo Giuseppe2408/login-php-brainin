@@ -16,6 +16,7 @@ if ($result = $connection->query($query)) {
         $data = $result->fetch_array(MYSQLI_ASSOC);
         if (password_verify($password, $data['password'])) {
             //prendo i dati dalla tabella register per poi inserirli nella tabella utenti loggati
+            
             $data_email = $data['email'];
             $data_password = $data['password'];
             $data_nome = $data['nome'];
@@ -29,16 +30,18 @@ if ($result = $connection->query($query)) {
             VALUES ('$data_email', '$data_password', '$data_nome', '$data_cognome', '$data_codice_fiscale', '$data_sesso', '$data_compleanno', '$data_luogo')";
 
             
-
             if($connection->query($create_user) == true) {
                 session_start();
-                $_SESSION['logged'] = true;
+                $_SESSION['logged'] = true;     
+                $_SESSION['email'] = $data_email;           
                 $_SESSION['nome'] = $data_nome;
                 $_SESSION['cognome'] = $data_cognome;
                 
             } else{
                 echo "errore" . " " . $connection->error;
             }
+
+           
         } else {
             echo "password errata";
         } 

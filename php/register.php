@@ -13,6 +13,7 @@ $luogo_di_nascita = $connection->real_escape_string($_POST['luogo_di_nascita']);
 
 //password hashata
 $hash_password = password_hash($password, PASSWORD_DEFAULT);
+
 $error = '';
 
 if (empty($nome)) {
@@ -39,10 +40,6 @@ else if (empty($compleanno)) {
 else if (empty($luogo_di_nascita)) {
     $error = "inserisci il luogo di nascita";
 }
-
-
-
-
 
 $query = "INSERT INTO users (nome, cognome, email, password, codice_Fiscale, sesso, compleanno, luogo_di_nascita) 
         VALUES ('$nome', '$cognome', '$email', '$hash_password', '$codice_Fiscale', '$sesso', '$compleanno', '$luogo_di_nascita')";
